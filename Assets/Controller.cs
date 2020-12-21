@@ -6,6 +6,8 @@ public class Controller : MonoBehaviour
 {
     public GameObject myUIGO;
     UIManager myUI;
+
+    int health = 3;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,15 @@ public class Controller : MonoBehaviour
     public void SwitchBoardPressed(int buttonNum)
     {
         myUI.UpdateSwitchBoard(buttonNum);
+    }
+
+    public void Damage() {
+        health--;
+        myUI.UpdateHealth(health);
+    }
+
+    public int getHealth() {
+        return health;
     }
 
 }

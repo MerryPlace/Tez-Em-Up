@@ -23,4 +23,9 @@ public class UIManager : MonoBehaviour
         portraitUI.GetComponent<Image>().sprite = portraits[buttonNum];
         switchUI.GetComponent<Image>().sprite = highlights[buttonNum];
     }
+
+    public void UpdateHealth(int health)
+    {
+        heartUI.GetComponent<Image>().sprite = hearts[health];
+    }
 }
