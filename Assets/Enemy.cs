@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float ySpeed;
     public bool canShoot;
     public float fireRate;
-    public float health;
+    public float health = 3;
 
     void Awake()
     {
@@ -20,6 +20,13 @@ public class Enemy : MonoBehaviour
     void Start()
     {
 
+    }
+
+    public void Damage(int damage) {
+        health -= damage;
+        if(health <= 0) {
+            Die();
+        }
     }
 
     // Update is called once per frame
@@ -38,6 +45,6 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-
+        Destroy(gameObject);
     }
 }

@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2772849107074618039}
+  - component: {fileID: 2772849107074618027}
   - component: {fileID: 2772849107074618038}
   - component: {fileID: 2772849107074618025}
   - component: {fileID: 2772849107074618024}
-  - component: {fileID: 2772849107074618027}
   m_Layer: 0
   m_Name: Tezinol Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,10 +30,33 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -2.11, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 5387624318789703980}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2772849107074618027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2772849107074618026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7822c96cdce914ead163dfcd7a5374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerGO: {fileID: 0}
+  speed: 10
+  invulTime: 3
+  TProjectile: []
+  KProjectile: {fileID: 0}
+  DProjectile: {fileID: 0}
+  CProjectile: {fileID: 0}
+  BProjectile: {fileID: 0}
+  OProjectile: []
+  delay: 10
 --- !u!212 &2772849107074618038
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -70,9 +93,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1036936635
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 70d6324f729470441ac4af1150e06d13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 7
 --- !u!60 &2772849107074618024
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -138,16 +161,33 @@ PolygonCollider2D:
       - {x: -0.3798931, y: -0.05489979}
       - {x: 0.3677642, y: -0.051068537}
       - {x: 0.36853874, y: 0.102276646}
---- !u!114 &2772849107074618027
-MonoBehaviour:
+--- !u!1 &3597292972844933949
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2772849107074618026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7822c96cdce914ead163dfcd7a5374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5387624318789703980}
+  m_Layer: 0
+  m_Name: origin A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5387624318789703980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597292972844933949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2772849107074618039}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

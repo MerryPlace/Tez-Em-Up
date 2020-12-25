@@ -21,11 +21,6 @@ public class Controller : MonoBehaviour
 
     }
 
-    public void ActionPressed()
-    {
-        Debug.Log("You have clicked the Action!");
-    }
-
     public void SwitchBoardPressed(int buttonNum)
     {
         myUI.UpdateSwitchBoard(buttonNum);
