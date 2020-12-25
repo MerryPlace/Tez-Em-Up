@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2772849107074618038}
   - component: {fileID: 2772849107074618025}
   - component: {fileID: 2772849107074618024}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tezinol Ship
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -50,13 +50,13 @@ MonoBehaviour:
   controllerGO: {fileID: 0}
   speed: 10
   invulTime: 3
-  TProjectile: []
+  trigger: {fileID: 0}
   KProjectile: {fileID: 0}
   DProjectile: {fileID: 0}
   CProjectile: {fileID: 0}
   BProjectile: {fileID: 0}
-  OProjectile: []
-  delay: 10
+  fireStartTime: 0
+  firing: 0
 --- !u!212 &2772849107074618038
 SpriteRenderer:
   m_ObjectHideFlags: 0

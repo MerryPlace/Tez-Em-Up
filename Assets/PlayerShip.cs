@@ -9,7 +9,6 @@ public class PlayerShip : MonoBehaviour
     Controller myController;
 
     SpriteRenderer mySR;
-
     public float speed;
 
     //invulnerability vars
@@ -17,18 +16,11 @@ public class PlayerShip : MonoBehaviour
     bool invulnerable = false;
 
     //weapon variables
-    GameObject trigger;
-    public GameObject[] TProjectile;
-    public GameObject KProjectile;
-    public GameObject DProjectile;
-    public GameObject CProjectile;
-    public GameObject BProjectile;
-    public GameObject[] OProjectile;
-    float fireStartTime = 0;
-    int framesSinceLastShot=0;
-    public int delay = 10;
-    bool firing = false;
-
+    [HideInInspector] public GameObject trigger;
+    GameObject currentWeapon;
+    public GameObject KWeapon;
+    public float fireStartTime = 0;
+    public bool firing = false;
 
     public void ActionPressed()
     {
@@ -38,6 +30,42 @@ public class PlayerShip : MonoBehaviour
     public void ActionReleased()
     {
         firing= false;
+    }
+
+    public void switchWeapon(int tez) 
+    {
+        if(currentWeapon != null) {
+            Destroy(currentWeapon);
+        }
+
+        switch (tez)
+        {
+            case 0:
+                Debug.Log("Tiger");
+                break;
+            case 1:
+                currentWeapon = Instantiate(KWeapon, trigger.transform.position, Quaternion.identity);
+                break;
+            case 2:
+                Debug.Log("Dragon");
+                break;
+            case 3:
+                Debug.Log("Cheetah");
+                break;
+            case 4:
+                Debug.Log("Bovine");
+                break;
+            case 5:
+                Debug.Log("Orca");
+                break;
+            default:
+                Debug.Log("That's not right");
+                break;
+        }
+        if(currentWeapon != null) {
+            currentWeapon.transform.parent = gameObject.transform;
+        }
+
     }
 
     // Start is called before the first frame update
@@ -51,13 +79,6 @@ public class PlayerShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        framesSinceLastShot++;
-        if(firing && framesSinceLastShot>delay) 
-        {
-            Instantiate(KProjectile, trigger.transform.position, Quaternion.identity);
-            framesSinceLastShot=0;
-        }
-
         if (Input.GetMouseButton(0))
         {
             Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -68,9 +89,7 @@ public class PlayerShip : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
             }
         }
-
     }
-
 
     void OnCollisionEnter2D(Collision2D col)
     {

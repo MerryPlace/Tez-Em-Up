@@ -6,24 +6,22 @@ public class Controller : MonoBehaviour
 {
     public GameObject myUIGO;
     UIManager myUI;
-
+    public GameObject myShipGO;
+    PlayerShip myShip;
+    [HideInInspector] public int tez = 0;
     int health = 3;
     
     // Start is called before the first frame update
     void Start()
     {
         myUI = myUIGO.GetComponent<UIManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        myShip = myShipGO.GetComponent<PlayerShip>();
     }
 
     public void SwitchBoardPressed(int buttonNum)
     {
         myUI.UpdateSwitchBoard(buttonNum);
+        myShip.switchWeapon(buttonNum);
     }
 
     public void Damage() {
