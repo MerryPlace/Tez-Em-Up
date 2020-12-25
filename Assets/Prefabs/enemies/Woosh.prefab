@@ -48,10 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 2
+  ySpeed: 3
   canShoot: 0
   fireRate: 0
-  health: 0
+  health: 2
+  spin: 0
 --- !u!212 &7722810318278901330
 SpriteRenderer:
   m_ObjectHideFlags: 0

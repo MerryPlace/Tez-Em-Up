@@ -51,7 +51,8 @@ MonoBehaviour:
   ySpeed: 1
   canShoot: 0
   fireRate: 0
-  health: 0
+  health: 3
+  spin: 1
 --- !u!212 &2112885198759586089
 SpriteRenderer:
   m_ObjectHideFlags: 0

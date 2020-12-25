@@ -11,15 +11,13 @@ public class Enemy : MonoBehaviour
     public bool canShoot;
     public float fireRate;
     public float health = 3;
+    public bool spin = false;
+    int spinSpeed;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    void Start()
-    {
-
+        spinSpeed = (int)Random.Range(-200, 200);
     }
 
     public void Damage(int damage) {
@@ -33,13 +31,22 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector2(xSpeed, -ySpeed);
+        if(spin) {
+            transform.Rotate(0, 0, Time.deltaTime*spinSpeed);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Player")
-        {
+        if (col.gameObject.tag == "Player") {
             Die();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.tag == "Bounds")
+        {
+            Destroy(gameObject);
         }
     }
 
