@@ -74,6 +74,7 @@ public class PlayerShip : MonoBehaviour
         myController = controllerGO.GetComponent<Controller>();
         mySR = GetComponent<SpriteRenderer>();
         trigger = transform.Find("triggerA").gameObject;
+        switchWeapon(1);
     }
 
     // Update is called once per frame

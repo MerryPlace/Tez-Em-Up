@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float ySpeed;
     public bool canShoot;
     public float fireRate;
-    public float health = 3;
+    public int health = 3;
     public bool spin = false;
     int spinSpeed;
 
@@ -20,11 +20,12 @@ public class Enemy : MonoBehaviour
         spinSpeed = (int)Random.Range(-200, 200);
     }
 
-    public void Damage(int damage) {
+    public int Damage(int damage) {
         health -= damage;
         if(health <= 0) {
             Die();
         }
+        return health;
     }
 
     // Update is called once per frame

@@ -51,10 +51,7 @@ MonoBehaviour:
   speed: 10
   invulTime: 3
   trigger: {fileID: 0}
-  KProjectile: {fileID: 0}
-  DProjectile: {fileID: 0}
-  CProjectile: {fileID: 0}
-  BProjectile: {fileID: 0}
+  KWeapon: {fileID: 0}
   fireStartTime: 0
   firing: 0
 --- !u!212 &2772849107074618038
