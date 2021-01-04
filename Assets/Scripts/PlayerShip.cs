@@ -16,20 +16,23 @@ public class PlayerShip : MonoBehaviour
     bool invulnerable = false;
 
     //weapon variables
-    [HideInInspector] public GameObject trigger;
+    [HideInInspector] public GameObject triggerA;
+    [HideInInspector] public GameObject triggerB;
     GameObject currentWeapon;
     public GameObject KWeapon;
-    public float fireStartTime = 0;
-    public bool firing = false;
+    public GameObject OCannon;
+    [HideInInspector] public float fireStartFrame = 0;
+    [HideInInspector] public bool firing = false;
 
     public void ActionPressed()
     {
-        fireStartTime = Time.time;
+        fireStartFrame = Time.frameCount;
         firing= true;
     }
     public void ActionReleased()
     {
         firing= false;
+        fireStartFrame = 0;
     }
 
     public void switchWeapon(int tez) 
@@ -44,7 +47,8 @@ public class PlayerShip : MonoBehaviour
                 Debug.Log("Tiger");
                 break;
             case 1:
-                currentWeapon = Instantiate(KWeapon, trigger.transform.position, Quaternion.identity);
+                Debug.Log(triggerA.transform.position.y);
+                currentWeapon = Instantiate(KWeapon, triggerA.transform.position, Quaternion.identity);
                 break;
             case 2:
                 Debug.Log("Dragon");
@@ -56,7 +60,8 @@ public class PlayerShip : MonoBehaviour
                 Debug.Log("Bovine");
                 break;
             case 5:
-                Debug.Log("Orca");
+                Debug.Log(triggerB.transform.position.y);
+                currentWeapon = Instantiate(OCannon, triggerB.transform.position, Quaternion.identity);
                 break;
             default:
                 Debug.Log("That's not right");
@@ -73,7 +78,8 @@ public class PlayerShip : MonoBehaviour
     {
         myController = controllerGO.GetComponent<Controller>();
         mySR = GetComponent<SpriteRenderer>();
-        trigger = transform.Find("triggerA").gameObject;
+        triggerA = transform.Find("triggerA").gameObject;
+        triggerB = transform.Find("triggerB").gameObject;
         switchWeapon(1);
     }
 

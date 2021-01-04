@@ -1,11 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cannon : MonoBehaviour
+public class TBullet : MonoBehaviour
 {
     public int speed = 8;
-    public int damage;
     Vector2 velocity;
     Rigidbody2D rb;
 
@@ -21,18 +20,17 @@ public class Cannon : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == "Enemy")
         {
-            damage = -col.gameObject.GetComponent<Enemy>().Damage(damage);
-
-            if (damage <= 0)
-            {
-                Destroy(gameObject);
-            }
+            col.gameObject.GetComponent<Enemy>().Damage(1);
+            Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
         if (col.gameObject.tag == "Bounds")
         {
             Destroy(gameObject);

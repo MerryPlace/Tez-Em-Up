@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &757908579065620170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757908579065620169}
+  m_Layer: 14
+  m_Name: triggerB
+  m_TagString: Friendly Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &757908579065620169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757908579065620170}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2772849107074618039}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2772849107074618026
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +62,7 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 5387624318789703980}
+  - {fileID: 757908579065620169}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,10 +80,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerGO: {fileID: 0}
   speed: 10
-  invulTime: 3
-  trigger: {fileID: 0}
-  KWeapon: {fileID: 0}
-  fireStartTime: 0
+  invulTime: 1
+  triggerA: {fileID: 0}
+  triggerB: {fileID: 0}
+  KWeapon: {fileID: 6303991425213125088, guid: 210953eccf02dbf41b0c9a9fbd3d982b, type: 3}
+  OCannon: {fileID: 4466880953290252901, guid: 64481f8d0c947da41ae818f9d1004464, type: 3}
+  fireStartFrame: 0
   firing: 0
 --- !u!212 &2772849107074618038
 SpriteRenderer:
@@ -156,6 +189,10 @@ PolygonCollider2D:
       - {x: -0.15633926, y: 0.29755148}
       - {x: -0.3798931, y: 0.09463271}
       - {x: -0.3798931, y: -0.05489979}
+      - {x: -0.121940985, y: -0.055274773}
+      - {x: -0.08078511, y: -0.24212937}
+      - {x: 0.06492025, y: -0.24044317}
+      - {x: 0.12760115, y: -0.049646303}
       - {x: 0.3677642, y: -0.051068537}
       - {x: 0.36853874, y: 0.102276646}
 --- !u!1 &3597292972844933949
@@ -168,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5387624318789703980}
   m_Layer: 0
-  m_Name: origin A
+  m_Name: triggerA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

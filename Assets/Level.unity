@@ -665,110 +665,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
-      value: -0.121940985
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
-      value: -0.055274773
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].x
-      value: -0.08078511
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
-      value: -0.24212937
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].x
-      value: 0.06492025
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].y
-      value: -0.24044317
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].x
-      value: 0.12760115
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
-      value: -0.049646303
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[10].x
-      value: 0.3677642
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[10].y
-      value: -0.051068537
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[11].x
-      value: 0.36853874
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618024, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[11].y
-      value: 0.102276646
-      objectReference: {fileID: 0}
     - target: {fileID: 2772849107074618026, guid: 60aaed8a5889785489cc7b674fdf619d,
         type: 3}
       propertyPath: m_Name
       value: Tezinol Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: delay
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: KWeapon
-      value: 
-      objectReference: {fileID: 6303991425213125088, guid: 210953eccf02dbf41b0c9a9fbd3d982b,
-        type: 3}
-    - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: kWeapon
-      value: 
-      objectReference: {fileID: 4752433797585118344, guid: 114ddff6a4c3b5d4296e21fbb3ab59b3,
-        type: 3}
-    - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: invulTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: KProjectile
-      value: 
-      objectReference: {fileID: 4752433797585118344, guid: 114ddff6a4c3b5d4296e21fbb3ab59b3,
-        type: 3}
-    - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: kProjectile
-      value: 
-      objectReference: {fileID: 4752433797585118344, guid: 114ddff6a4c3b5d4296e21fbb3ab59b3,
-        type: 3}
     - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
         type: 3}
       propertyPath: controllerGO
@@ -828,31 +729,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3492335243148790020, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3492335243148790020, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3492335243148790020, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_DrawMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3492335243148790022, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Name
-      value: Orca Cannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597292972844933949, guid: 60aaed8a5889785489cc7b674fdf619d,
-        type: 3}
-      propertyPath: m_Name
-      value: triggerA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60aaed8a5889785489cc7b674fdf619d, type: 3}

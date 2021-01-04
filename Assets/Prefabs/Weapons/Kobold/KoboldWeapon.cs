@@ -21,7 +21,7 @@ public class KoboldWeapon : MonoBehaviour
         framesSinceLastShot++;
         if (myShip.firing && framesSinceLastShot > delay)
         {
-            Instantiate(bullet, myShip.trigger.transform.position, Quaternion.identity);
+            Instantiate(bullet, myShip.triggerA.transform.position, Quaternion.identity);
             framesSinceLastShot = 0;
         }
     }
