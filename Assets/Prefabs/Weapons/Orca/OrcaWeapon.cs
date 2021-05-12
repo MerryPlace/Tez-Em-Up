@@ -11,8 +11,10 @@ public class OrcaWeapon : MonoBehaviour
     SpriteRenderer mySR;
     
     int framesSinceLastShot = 0;
-    public int shotDelay = 400;
-    public int chargeInterval = 1000;
+    public int shotDelay;
+    public int chargeInterval;
+    public float maxRotateSpeed;
+    public float minRotateSpeed;
     int projectileLevel = 0;
     int framesCharging = 0;
     bool charging;
@@ -30,7 +32,16 @@ public class OrcaWeapon : MonoBehaviour
     void Update()
     {
         if(charging) {
+            framesCharging++;
+
+            float rotateSpeed = Time.deltaTime*framesCharging;
+            if(rotateSpeed > maxRotateSpeed) {
+                rotateSpeed = maxRotateSpeed;
+        }
+            transform.Rotate(0, 0, rotateSpeed);
+
             if(framesCharging % chargeInterval == 0) {
+                Debug.Log(rotateSpeed);
                 if(framesCharging == chargeInterval) {
                     projectileLevel = 1;
                     mySR.sprite = sprites[projectileLevel];
@@ -41,14 +52,11 @@ public class OrcaWeapon : MonoBehaviour
                     mySR.color = spriteColors[projectileLevel];
                 }
             }
-            framesCharging++;
 
             if(!myShip.firing) {
                 charging = false;
                 mySR.enabled = false;
-
-                Debug.Log("Shot a type " + projectileLevel);
-                Instantiate(projectiles[projectileLevel], myShip.triggerB.transform.position, Quaternion.identity);
+                Instantiate(projectiles[projectileLevel], myShip.triggerB.transform.position, Quaternion.identity).GetComponent<Cannon>().rotateSpeed = rotateSpeed;
                 framesSinceLastShot = 0;
             }
         }

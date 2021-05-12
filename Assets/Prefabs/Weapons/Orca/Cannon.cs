@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
+    Rigidbody2D rb;
+
     public int speed = 8;
     public int damage;
     Vector2 velocity;
-    Rigidbody2D rb;
+    [HideInInspector] public float rotateSpeed;
+    
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         velocity = new Vector2(0, speed);
+        rb.velocity = velocity;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = velocity;
+        transform.Rotate(0, 0, rotateSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

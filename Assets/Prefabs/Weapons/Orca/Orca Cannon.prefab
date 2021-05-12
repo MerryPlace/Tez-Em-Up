@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4466880953290252902}
-  - component: {fileID: 4466880953290252903}
   - component: {fileID: 8937233544391163006}
+  - component: {fileID: 4466880953290252903}
   m_Layer: 0
   m_Name: Orca Cannon
   m_TagString: Untagged
@@ -32,6 +32,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8937233544391163006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466880953290252901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8575d2a12e4dc6143bb927794c3e9fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -7888296697152109952, guid: 132cbb001827ff84ebb00abf1d818014, type: 3}
+  - {fileID: 698664279297640794, guid: 132cbb001827ff84ebb00abf1d818014, type: 3}
+  - {fileID: 2912464402848211330, guid: 132cbb001827ff84ebb00abf1d818014, type: 3}
+  spriteColors:
+  - {r: 0.20392157, g: 0.54509807, b: 1, a: 1}
+  - {r: 0.49019608, g: 0.8156863, b: 1, a: 1}
+  - {r: 0.8235294, g: 1, b: 1, a: 1}
+  projectiles:
+  - {fileID: 940028758637448287, guid: 349c9714993481542931bcbc86478728, type: 3}
+  - {fileID: 5531532996842289368, guid: 116e13af0cf80ad4695fa6de2cba0d22, type: 3}
+  - {fileID: 7055661079593154333, guid: eac812200316d7245a89b267d8094869, type: 3}
+  shotDelay: 300
+  chargeInterval: 400
+  maxRotateSpeed: 3
+  minRotateSpeed: 1
 --- !u!212 &4466880953290252903
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -83,29 +111,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8937233544391163006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4466880953290252901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8575d2a12e4dc6143bb927794c3e9fb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -7888296697152109952, guid: 132cbb001827ff84ebb00abf1d818014, type: 3}
-  - {fileID: 698664279297640794, guid: 132cbb001827ff84ebb00abf1d818014, type: 3}
-  - {fileID: 2912464402848211330, guid: 132cbb001827ff84ebb00abf1d818014, type: 3}
-  spriteColors:
-  - {r: 0.20392157, g: 0.54509807, b: 1, a: 1}
-  - {r: 0.49019608, g: 0.8156863, b: 1, a: 1}
-  - {r: 0.8235294, g: 1, b: 1, a: 1}
-  projectiles:
-  - {fileID: 940028758637448287, guid: 349c9714993481542931bcbc86478728, type: 3}
-  - {fileID: 5531532996842289368, guid: 116e13af0cf80ad4695fa6de2cba0d22, type: 3}
-  - {fileID: 7055661079593154333, guid: eac812200316d7245a89b267d8094869, type: 3}
-  shotDelay: 300
-  chargeInterval: 400

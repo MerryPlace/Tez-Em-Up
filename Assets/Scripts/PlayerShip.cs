@@ -19,7 +19,11 @@ public class PlayerShip : MonoBehaviour
     [HideInInspector] public GameObject triggerA;
     [HideInInspector] public GameObject triggerB;
     GameObject currentWeapon;
+    public GameObject TWeapon;
     public GameObject KWeapon;
+    public GameObject DWeapon;
+    public GameObject CWeapon;
+    public GameObject BArrow;
     public GameObject OCannon;
     [HideInInspector] public float fireStartFrame = 0;
     [HideInInspector] public bool firing = false;
@@ -47,7 +51,6 @@ public class PlayerShip : MonoBehaviour
                 Debug.Log("Tiger");
                 break;
             case 1:
-                Debug.Log(triggerA.transform.position.y);
                 currentWeapon = Instantiate(KWeapon, triggerA.transform.position, Quaternion.identity);
                 break;
             case 2:
@@ -60,7 +63,6 @@ public class PlayerShip : MonoBehaviour
                 Debug.Log("Bovine");
                 break;
             case 5:
-                Debug.Log(triggerB.transform.position.y);
                 currentWeapon = Instantiate(OCannon, triggerB.transform.position, Quaternion.identity);
                 break;
             default:
