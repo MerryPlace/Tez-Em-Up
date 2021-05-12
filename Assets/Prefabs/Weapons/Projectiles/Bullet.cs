@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KBullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public int speed = 8;
     Vector2 velocity;

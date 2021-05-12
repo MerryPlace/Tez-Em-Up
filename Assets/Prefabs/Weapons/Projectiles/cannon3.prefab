@@ -120,11 +120,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7055661079593154333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3be9073f251de6344a37168bd27d3416, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e9bfdff1ce597e468dde0259591a3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
   damage: 7
+  rotateSpeed: 0
 --- !u!50 &7055661079593153760
 Rigidbody2D:
   serializedVersion: 4

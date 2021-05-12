@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrcaWeapon : MonoBehaviour
+public class CannonWeapon : MonoBehaviour
 {
     public Sprite[] sprites;
     public Color[] spriteColors;
@@ -56,7 +56,7 @@ public class OrcaWeapon : MonoBehaviour
             if(!myShip.firing) {
                 charging = false;
                 mySR.enabled = false;
-                Instantiate(projectiles[projectileLevel], myShip.triggerB.transform.position, Quaternion.identity).GetComponent<Cannon>().rotateSpeed = rotateSpeed;
+                Instantiate(projectiles[projectileLevel], myShip.triggerB.transform.position, Quaternion.identity).GetComponent<CannonBall>().rotateSpeed = rotateSpeed;
                 framesSinceLastShot = 0;
             }
         }

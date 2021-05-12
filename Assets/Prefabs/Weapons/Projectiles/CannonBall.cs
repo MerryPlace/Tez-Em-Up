@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cannon : MonoBehaviour
+public class CannonBall : MonoBehaviour
 {
     Rigidbody2D rb;
 
