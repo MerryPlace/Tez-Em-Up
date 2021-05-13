@@ -58,7 +58,7 @@ public class PlayerShip : MonoBehaviour
                 Debug.Log("Dragon");
                 break;
             case 3:
-                Debug.Log("Cheetah");
+                currentWeapon = Instantiate(CWeapon, triggerA.transform.position, Quaternion.identity);
                 break;
             case 4:
                 Debug.Log("Bovine");
