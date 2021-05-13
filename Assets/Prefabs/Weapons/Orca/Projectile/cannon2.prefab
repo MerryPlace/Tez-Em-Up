@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5531532996842289369}
+  - component: {fileID: 5531532996842289371}
   - component: {fileID: 5531532996842289370}
   - component: {fileID: 5531532996842289364}
-  - component: {fileID: 5531532996842289371}
   - component: {fileID: 5531532996842289365}
   m_Layer: 14
   m_Name: cannon2
@@ -34,6 +34,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5531532996842289371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5531532996842289368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9bfdff1ce597e468dde0259591a3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  damage: 5
+  rotateSpeed: 0
 --- !u!212 &5531532996842289370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -110,21 +125,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &5531532996842289371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5531532996842289368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e9bfdff1ce597e468dde0259591a3f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  damage: 5
-  rotateSpeed: 0
 --- !u!50 &5531532996842289365
 Rigidbody2D:
   serializedVersion: 4

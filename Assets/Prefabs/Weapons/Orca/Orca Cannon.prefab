@@ -57,7 +57,7 @@ MonoBehaviour:
   - {fileID: 5531532996842289368, guid: 116e13af0cf80ad4695fa6de2cba0d22, type: 3}
   - {fileID: 7055661079593154333, guid: eac812200316d7245a89b267d8094869, type: 3}
   shotDelay: 300
-  chargeInterval: 400
+  chargeInterval: 300
   maxRotateSpeed: 3
   minRotateSpeed: 1
 --- !u!212 &4466880953290252903
