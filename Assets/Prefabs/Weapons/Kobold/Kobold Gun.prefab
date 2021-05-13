@@ -43,5 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d41fe1a8ae47344e9d9a00090fafd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4752433797585118344, guid: 114ddff6a4c3b5d4296e21fbb3ab59b3, type: 3}
-  delay: 60
+  bulletPrefab: {fileID: 4752433797585118344, guid: 114ddff6a4c3b5d4296e21fbb3ab59b3,
+    type: 3}
+  orbitalPrefab: {fileID: 7251557321036693220, guid: ecf5047d6e9ea9c47ad84e5712027226,
+    type: 3}
+  delay: 200
+  orbitSpeed: 60

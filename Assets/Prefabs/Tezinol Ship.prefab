@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 757908579065620169}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: triggerB
-  m_TagString: Friendly Projectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,6 +29,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2772849107074618039}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1402342299334639970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8359018276492598565}
+  m_Layer: 14
+  m_Name: triggerCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8359018276492598565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402342299334639970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2772849107074618039}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2772849107074618026
 GameObject:
@@ -63,6 +93,7 @@ Transform:
   m_Children:
   - {fileID: 5387624318789703980}
   - {fileID: 757908579065620169}
+  - {fileID: 8359018276492598565}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,7 +114,11 @@ MonoBehaviour:
   invulTime: 1
   triggerA: {fileID: 0}
   triggerB: {fileID: 0}
+  TWeapon: {fileID: 0}
   KWeapon: {fileID: 6303991425213125088, guid: 210953eccf02dbf41b0c9a9fbd3d982b, type: 3}
+  DWeapon: {fileID: 0}
+  CWeapon: {fileID: 0}
+  BArrow: {fileID: 0}
   OCannon: {fileID: 4466880953290252901, guid: 64481f8d0c947da41ae818f9d1004464, type: 3}
   fireStartFrame: 0
   firing: 0

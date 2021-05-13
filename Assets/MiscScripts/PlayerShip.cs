@@ -18,6 +18,7 @@ public class PlayerShip : MonoBehaviour
     //weapon variables
     [HideInInspector] public GameObject triggerA;
     [HideInInspector] public GameObject triggerB;
+    [HideInInspector] public GameObject triggerCenter;
     GameObject currentWeapon;
     public GameObject TWeapon;
     public GameObject KWeapon;
@@ -82,6 +83,7 @@ public class PlayerShip : MonoBehaviour
         mySR = GetComponent<SpriteRenderer>();
         triggerA = transform.Find("triggerA").gameObject;
         triggerB = transform.Find("triggerB").gameObject;
+        triggerCenter = transform.Find("triggerCenter").gameObject;
         switchWeapon(1);
     }
 
