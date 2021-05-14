@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float ySpeed;
     public bool canShoot;
     public float fireRate;
-    public int health = 3;
+    public int remainingHealth = 3;
     public bool spin = false;
     int spinSpeed;
 
@@ -20,12 +20,12 @@ public class Enemy : MonoBehaviour
         spinSpeed = (int)Random.Range(-200, 200);
     }
 
-    public int Damage(int damage) {
-        health -= damage;
-        if(health <= 0) {
+    public int DamageEnemy(int damage) {
+        remainingHealth -= damage;
+        if(remainingHealth <= 0) {
             Die();
         }
-        return health;
+        return remainingHealth;
     }
 
     // Update is called once per frame
@@ -39,19 +39,19 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Player") {
+        if (col.gameObject.tag == "Player") { //if collide with player, die
             Die();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col) {
+    private void OnTriggerEnter2D(Collider2D col) { //if out of bounds disappear
         if (col.gameObject.tag == "Bounds")
         {
             Destroy(gameObject);
         }
     }
 
-    void Die()
+    void Die() //Death function
     {
         Destroy(gameObject);
     }

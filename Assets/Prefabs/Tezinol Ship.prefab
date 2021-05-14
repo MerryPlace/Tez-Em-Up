@@ -114,10 +114,11 @@ MonoBehaviour:
   invulTime: 1
   triggerA: {fileID: 0}
   triggerB: {fileID: 0}
+  triggerCenter: {fileID: 0}
   TWeapon: {fileID: 0}
   KWeapon: {fileID: 6303991425213125088, guid: 210953eccf02dbf41b0c9a9fbd3d982b, type: 3}
-  DWeapon: {fileID: 0}
-  CWeapon: {fileID: 0}
+  DWeapon: {fileID: 1348514200719097125, guid: 7db9a62349bbd5b4c9a7e6f1d634f4af, type: 3}
+  CWeapon: {fileID: 6383984898967548032, guid: 6e0fd5e54ac3d224abcc94300eace154, type: 3}
   BArrow: {fileID: 0}
   OCannon: {fileID: 4466880953290252901, guid: 64481f8d0c947da41ae818f9d1004464, type: 3}
   fireStartFrame: 0

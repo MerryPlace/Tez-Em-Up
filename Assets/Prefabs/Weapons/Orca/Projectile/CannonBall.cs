@@ -30,7 +30,7 @@ public class CannonBall : MonoBehaviour
         Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == "Enemy")
         {
-            damage = -col.gameObject.GetComponent<Enemy>().Damage(damage);
+            damage = -col.gameObject.GetComponent<Enemy>().DamageEnemy(damage);
 
             if (damage <= 0)
             {

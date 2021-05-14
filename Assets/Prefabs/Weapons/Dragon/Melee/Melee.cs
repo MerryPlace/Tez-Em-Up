@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Orbital : MonoBehaviour
+
+public class Melee : MonoBehaviour
 {
-    public int damage = 3;
+    public int damage = 2;
+
+    void Awake() {
+        GetComponent<PolygonCollider2D>().enabled = false;
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Enemy")

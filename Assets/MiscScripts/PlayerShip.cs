@@ -55,7 +55,7 @@ public class PlayerShip : MonoBehaviour
                 currentWeapon = Instantiate(KWeapon, triggerA.transform.position, Quaternion.identity);
                 break;
             case 2:
-                Debug.Log("Dragon");
+                currentWeapon = Instantiate(DWeapon, triggerCenter.transform.position, Quaternion.identity);
                 break;
             case 3:
                 currentWeapon = Instantiate(CWeapon, triggerA.transform.position, Quaternion.identity);
