@@ -49,7 +49,7 @@ public class PlayerShip : MonoBehaviour
         switch (tez)
         {
             case 0:
-                Debug.Log("Tiger");
+                currentWeapon = Instantiate(TWeapon, triggerA.transform.position, Quaternion.identity);
                 break;
             case 1:
                 currentWeapon = Instantiate(KWeapon, triggerA.transform.position, Quaternion.identity);

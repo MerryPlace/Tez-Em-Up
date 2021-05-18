@@ -5,6 +5,15 @@ TextureImporter:
   - first:
       213: 516385150402736479
     second: DragonMelee_0
+  - first:
+      213: -6631612344093603031
+    second: DragonMelee_1
+  - first:
+      213: -5473365075684510592
+    second: DragonMelee_2
+  - first:
+      213: -6203573662100748981
+    second: DragonMelee_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -142,6 +151,69 @@ TextureImporter:
       bones: []
       spriteID: f51ba01fe819a2700800000000000000
       internalID: 516385150402736479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DragonMelee_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 7
+        width: 3
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b843675b7c7f3a0800000000000000
+      internalID: -6631612344093603031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DragonMelee_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 7
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084bbc97673ba04b0800000000000000
+      internalID: -5473365075684510592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DragonMelee_3
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 7
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45048c4f9a78e9a0800000000000000
+      internalID: -6203573662100748981
       vertices: []
       indices: 
       edges: []

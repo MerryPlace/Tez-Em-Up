@@ -12,8 +12,8 @@ public class DragonWeapon : MonoBehaviour
     bool attacking = false;
     bool chargeSwingMode = true;
 
-    int framesUntilSwing = 650;
-    int framesUntilDeath = 1650; //950
+    int framesUntilSwing = 600;
+    int framesUntilDeath = 2000; 
 
     GameObject axe;
 
@@ -39,7 +39,7 @@ public class DragonWeapon : MonoBehaviour
                     
                 }
             } else {
-                axe.transform.RotateAround(myShip.triggerCenter.transform.position, Vector3.forward, chargeSpeed * 2.5f * Time.deltaTime);
+                axe.transform.RotateAround(myShip.triggerCenter.transform.position, Vector3.forward, chargeSpeed * 3.5f * Time.deltaTime);
                 
                 if(framesSinceLastSwing > framesUntilDeath) {
                     Destroy(axe,0);
