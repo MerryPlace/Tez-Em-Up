@@ -11,6 +11,8 @@ public class PlayerShip : MonoBehaviour
     SpriteRenderer mySR;
     public float speed;
 
+    bool bovineMode;
+
     //invulnerability vars
     public float invulTime;
     bool invulnerable = false;
@@ -46,6 +48,8 @@ public class PlayerShip : MonoBehaviour
             Destroy(currentWeapon);
         }
 
+        bovineMode = false;
+
         switch (tez)
         {
             case 0:
@@ -61,13 +65,14 @@ public class PlayerShip : MonoBehaviour
                 currentWeapon = Instantiate(CWeapon, triggerA.transform.position, Quaternion.identity);
                 break;
             case 4:
-                Debug.Log("Bovine");
+                bovineMode = true;
+                currentWeapon = Instantiate(BArrow, triggerA.transform.position, Quaternion.identity);
                 break;
             case 5:
                 currentWeapon = Instantiate(OCannon, triggerB.transform.position, Quaternion.identity);
                 break;
             default:
-                Debug.Log("That's not right");
+                Debug.Log("Error: Tried to switch to non-existent weapon.");
                 break;
         }
         if(currentWeapon != null) {
@@ -90,8 +95,9 @@ public class PlayerShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && (!bovineMode||!firing) )
         {
+            
             Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (targetPos.y > -3)
             {

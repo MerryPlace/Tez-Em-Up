@@ -41,7 +41,6 @@ public class CannonWeapon : MonoBehaviour
             transform.Rotate(0, 0, rotateSpeed);
 
             if(framesCharging % chargeInterval == 0) {
-                Debug.Log(rotateSpeed);
                 if(framesCharging == chargeInterval) {
                     projectileLevel = 1;
                     mySR.sprite = sprites[projectileLevel];

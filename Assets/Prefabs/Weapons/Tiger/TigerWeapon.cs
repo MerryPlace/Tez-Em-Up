@@ -35,6 +35,5 @@ public class TigerWeapon : MonoBehaviour
                 delay = baseDelay;
             }
         }
-        
     }
 }
