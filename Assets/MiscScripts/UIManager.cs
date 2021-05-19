@@ -12,12 +12,6 @@ public class UIManager : MonoBehaviour
     public Sprite[] hearts;
     public GameObject heartUI;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public void UpdateSwitchBoard(int buttonNum)
     {
         portraitUI.GetComponent<Image>().sprite = portraits[buttonNum];

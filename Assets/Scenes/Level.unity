@@ -633,6 +633,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
         type: 3}
+      propertyPath: BArrow
+      value: 
+      objectReference: {fileID: 7017804136563085011, guid: 87d22696d3053b44e87d3da08986dd01,
+        type: 3}
+    - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
+        type: 3}
+      propertyPath: TWeapon
+      value: 
+      objectReference: {fileID: 769167578080273717, guid: 20394b04d9b9f4e4b8834f65a6916ed8,
+        type: 3}
+    - target: {fileID: 2772849107074618027, guid: 60aaed8a5889785489cc7b674fdf619d,
+        type: 3}
       propertyPath: controllerGO
       value: 
       objectReference: {fileID: 1626843219}

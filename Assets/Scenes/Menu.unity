@@ -180,17 +180,17 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 150
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 170
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CONTINUE
+  m_Text: START
 --- !u!222 &259578235
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 410227534}
   - component: {fileID: 410227533}
   m_Layer: 5
-  m_Name: Button-New Game
+  m_Name: Button-Mode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,7 +311,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.4068368}
   m_AnchorMax: {x: 0.5, y: 0.4068368}
   m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 1100, y: 200}
+  m_SizeDelta: {x: 1200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &410227533
 MonoBehaviour:
@@ -355,7 +355,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 410227534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2131296335}
+        m_MethodName: ModePressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &410227534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,7 +440,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.24150054, g: 0.24510503, b: 0.254717, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -534,18 +545,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
-    m_FontStyle: 0
+    m_FontSize: 0
+    m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 170
+    m_MinSize: 0
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NEW GAME
+  m_Text: MODE:MEDIUM
 --- !u!222 &1556838538
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -567,7 +578,7 @@ GameObject:
   - component: {fileID: 1678938244}
   - component: {fileID: 1678938243}
   m_Layer: 5
-  m_Name: Button-Continue
+  m_Name: Button-Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,7 +602,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.4068368}
   m_AnchorMax: {x: 0.5, y: 0.4068368}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1100, y: 200}
+  m_SizeDelta: {x: 1200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678938243
 MonoBehaviour:
@@ -635,7 +646,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1678938244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1678938244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,6 +773,7 @@ GameObject:
   - component: {fileID: 2131296333}
   - component: {fileID: 2131296332}
   - component: {fileID: 2131296331}
+  - component: {fileID: 2131296335}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -840,3 +863,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2131296335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131296330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6bad99cbab4284ca22d928b05aa6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeText: {fileID: 1556838535}
+  portraitSprites: []
