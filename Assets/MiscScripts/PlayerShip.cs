@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerShip : MonoBehaviour
 {
@@ -117,12 +118,30 @@ public class PlayerShip : MonoBehaviour
                 myController.Damage();
                 if (myController.getHealth() == 0)
                 {
-                    Destroy(gameObject);
+                    PlayerDeath();
                 }
                 StartCoroutine("TriggerInvul");
             }
         }
     }
+
+    void PlayerDeath() {
+        Destroy(gameObject);
+        StartCoroutine(ReturnToMenu(5f));
+    }
+
+    IEnumerator ReturnToMenu(float waitTime)
+    {
+        //yield return new WaitForSeconds(waitTime);
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
+        
+        while (asyncLoad.isDone == false)
+        {
+            yield return null;
+        }
+    }
+
     IEnumerator TriggerInvul()
     {
         invulnerable = true;

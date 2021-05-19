@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,38 +10,53 @@ public class MainMenu : MonoBehaviour
     public GameObject menuImage;
 
     public Sprite[] portraitSprites;
-    short difficultyMode = 1;
+    short difficultyMode = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         menuImage.GetComponent<Image>().sprite = portraitSprites[(int)Random.Range(0, portraitSprites.Length)];
+        modeText.GetComponent<Text>().text = ModeCodeText();
     }
 
     public void StartPressed()
     {
+        StartCoroutine(StartLevel());
+    }
+
+    IEnumerator StartLevel()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
         
+        while (asyncLoad.isDone == false)
+        {
+            yield return null;
+        }
     }
 
     public void ModePressed()
     {
+        difficultyMode++;
+        if(difficultyMode == 3) {
+            difficultyMode = 0;
+        }
         //TODO: implement difficulty
+        modeText.GetComponent<Text>().text = ModeCodeText();
+
+    }
+
+    string ModeCodeText() 
+    {
         switch (difficultyMode)
         {
             case 0:
-                modeText.GetComponent<Text>().text = "Mode: Easy";
-                break;
+                return "Mode: Easy";
             case 1:
-                modeText.GetComponent<Text>().text = "Mode: Medium";
-                break;
+                return "Mode: Medium";
             case 2:
-                modeText.GetComponent<Text>().text = "Mode: Hard";
-                difficultyMode = -1; //roll around
-                break;
+                return "Mode: Hard";
             default:
-                break;
+                return "Mode: Error";
         }
-
-        difficultyMode++;
     }
 }
