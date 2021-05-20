@@ -8,7 +8,6 @@ public class Controller : MonoBehaviour
     UIManager myUI;
     public GameObject myShipGO;
     PlayerShip myShip;
-    [HideInInspector] public int tez = 0;
     int health = 3;
     
     // Start is called before the first frame update

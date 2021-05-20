@@ -198,7 +198,7 @@ Transform:
   m_Children:
   - {fileID: 600447658}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430423155 stripped
 GameObject:
@@ -314,6 +314,50 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7301451860621396829}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1156373055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1156373057}
+  - component: {fileID: 1156373056}
+  m_Layer: 0
+  m_Name: AppController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1156373056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156373055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4d688fa8003d447bbc47bb2acb096b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyMode: 1
+--- !u!4 &1156373057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156373055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1626843219
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +369,7 @@ GameObject:
   - component: {fileID: 1626843221}
   - component: {fileID: 1626843220}
   m_Layer: 0
-  m_Name: Game Controller
+  m_Name: Level Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +389,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myUIGO: {fileID: 1675516590}
   myShipGO: {fileID: 559774996}
-  tez: 0
 --- !u!4 &1626843221
 Transform:
   m_ObjectHideFlags: 0
@@ -354,11 +397,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626843219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9074006, y: 0, z: -884.32605}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1675516590
 GameObject:
@@ -419,11 +462,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675516590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 140.11293, y: 339.89816, z: -658.2732}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023079366 stripped
 GameObject:
@@ -517,7 +560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 13.87, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2136042579
 BoxCollider2D:
@@ -604,11 +647,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d3555ea7fd781499ac4f0fef89e858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1
+  baseSpawnRate: 1
   enemies:
   - {fileID: 1658107826335649277, guid: 7aef84c6bae17774395493cb983f056c, type: 3}
   - {fileID: 1489491464117755897, guid: e80f9afbca944204a99ab6d613d57a6d, type: 3}
   - {fileID: 7722810318278901334, guid: c3cd1aa6d6dd02944a2115975ad3a043, type: 3}
+  sr: 0
 --- !u!1001 &2772849106962191782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -743,7 +787,7 @@ PrefabInstance:
     - target: {fileID: 7301451859540088174, guid: 511cdb0429f055141b498ee43b90bf70,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7301451859540088174, guid: 511cdb0429f055141b498ee43b90bf70,
         type: 3}

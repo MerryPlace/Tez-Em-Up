@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public float spawnRate;
+    public float baseSpawnRate;
     public GameObject[] enemies;
+    public float sr;
+
+    AppController appController;
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawn", spawnRate, spawnRate);
+        appController = GameObject.Find("AppController").GetComponent<AppController>();
+        sr = baseSpawnRate - (appController.difficultyMode * .3f);
+        InvokeRepeating("Spawn", 0, sr);
     }
 
     // Update is called once per frame

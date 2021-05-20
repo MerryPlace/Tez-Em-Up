@@ -9,12 +9,17 @@ public class MainMenu : MonoBehaviour
     public GameObject modeText;
     public GameObject menuImage;
 
+    AppController appController;
+
     public Sprite[] portraitSprites;
-    short difficultyMode = 0;
+    short difficultyMode;
 
     // Start is called before the first frame update
     void Start()
     {
+        appController = GameObject.Find("AppController").GetComponent<AppController>();
+        difficultyMode = appController.difficultyMode;
+        
         menuImage.GetComponent<Image>().sprite = portraitSprites[(int)Random.Range(0, portraitSprites.Length)];
         modeText.GetComponent<Text>().text = ModeCodeText();
     }
@@ -26,6 +31,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator StartLevel()
     {
+        appController.difficultyMode = difficultyMode;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
         
         while (asyncLoad.isDone == false)
