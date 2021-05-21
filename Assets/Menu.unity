@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 344168896}
   - component: {fileID: 344168895}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Top Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,9 +919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6bad99cbab4284ca22d928b05aa6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modeText: {fileID: 1556838535}
-  menuImage: {fileID: 344168893}
-  appController: {fileID: 0}
+  modeText: {fileID: 1556838537}
+  menuImage: {fileID: 344168895}
   portraitSprites:
   - {fileID: 4329407632164072968, guid: 9e8cd04dc16c94e4a8a94badd2647874, type: 3}
   - {fileID: -1492594608601113626, guid: 9e8cd04dc16c94e4a8a94badd2647874, type: 3}

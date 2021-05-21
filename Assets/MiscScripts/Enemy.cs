@@ -6,29 +6,27 @@ public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
 
+    ScoreController score;
+    public int scoreWorth;
+
     public float xSpeed;
     public float ySpeed;
     public bool canShoot;
     public float fireRate;
-    public int remainingHealth = 3;
+    public int currentHealth = 3;
     public bool spin = false;
     int spinSpeed;
 
-    void Awake()
+
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spinSpeed = (int)Random.Range(-200, 200);
+        score = GameObject.Find("ScoreController").GetComponent<ScoreController>();
+
     }
 
-    public int DamageEnemy(int damage) {
-        remainingHealth -= damage;
-        if(remainingHealth <= 0) {
-            Die();
-        }
-        return remainingHealth;
-    }
-
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
         rb.velocity = new Vector2(xSpeed, -ySpeed);
@@ -36,6 +34,15 @@ public class Enemy : MonoBehaviour
             transform.Rotate(0, 0, Time.deltaTime*spinSpeed);
         }
     }
+
+    public int DamageMe(int damage) {
+        currentHealth -= damage;
+        if(currentHealth <= 0) {
+            Die();
+        }
+        return currentHealth;
+    }
+
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -47,12 +54,14 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) { //if out of bounds disappear
         if (col.gameObject.tag == "Bounds")
         {
+            score.addToCurrentScore(-(scoreWorth/5));
             Destroy(gameObject);
         }
     }
 
     void Die() //Death function
     {
+        score.addToCurrentScore(scoreWorth);
         Destroy(gameObject);
     }
 }

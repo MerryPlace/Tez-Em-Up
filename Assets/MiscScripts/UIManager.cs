@@ -11,6 +11,17 @@ public class UIManager : MonoBehaviour
     public GameObject switchUI;
     public Sprite[] hearts;
     public GameObject heartUI;
+    public Text scoreUI;
+    public ScoreController currentScore;
+
+    void Start()
+    {
+        InvokeRepeating("UpdateScoreUI", 0f, .5f);
+    }
+
+    void UpdateScoreUI() {
+        scoreUI.text = "Score: "+ currentScore.getCurrentScore();
+    }
 
     public void UpdateSwitchBoard(int buttonNum)
     {

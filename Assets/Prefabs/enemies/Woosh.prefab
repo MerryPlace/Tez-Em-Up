@@ -47,11 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07cc4eae069e28349855c9aa1e6d850a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreWorth: 15
   xSpeed: 0
   ySpeed: 3
   canShoot: 0
   fireRate: 0
-  health: 2
+  currentHealth: 3
   spin: 0
 --- !u!212 &7722810318278901330
 SpriteRenderer:

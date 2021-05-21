@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject modeText;
-    public GameObject menuImage;
+    public Text modeText;
+    public Image menuImage;
 
     AppController appController;
 
@@ -20,8 +20,8 @@ public class MainMenu : MonoBehaviour
         appController = GameObject.Find("AppController").GetComponent<AppController>();
         difficultyMode = appController.difficultyMode;
         
-        menuImage.GetComponent<Image>().sprite = portraitSprites[(int)Random.Range(0, portraitSprites.Length)];
-        modeText.GetComponent<Text>().text = ModeCodeText();
+        menuImage.sprite = portraitSprites[(int)Random.Range(0, portraitSprites.Length)];
+        modeText.text = ModeCodeText();
     }
 
     public void StartPressed()

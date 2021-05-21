@@ -14,7 +14,7 @@ public class Melee : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            col.gameObject.GetComponent<Enemy>().DamageEnemy(damage);
+            col.gameObject.GetComponent<Enemy>().DamageMe(damage);
         }
     }
 }
