@@ -314,90 +314,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7301451860621396829}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1059817041 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7301451859540088174, guid: 511cdb0429f055141b498ee43b90bf70,
+--- !u!114 &1101989602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8052509193589956296, guid: 511cdb0429f055141b498ee43b90bf70,
     type: 3}
   m_PrefabInstance: {fileID: 7301451860621396829}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1101989600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1101989601}
-  - component: {fileID: 1101989603}
-  - component: {fileID: 1101989602}
-  m_Layer: 5
-  m_Name: Score
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1101989601
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101989600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1059817041}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 98, y: 199}
-  m_SizeDelta: {x: 160, y: 41.309326}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!114 &1101989602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101989600}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 6
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Score:'
---- !u!222 &1101989603
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101989600}
-  m_CullTransparentMesh: 0
 --- !u!1 &1156373055
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,8 +466,8 @@ MonoBehaviour:
   - {fileID: -5848842478061101829, guid: e73007020c06a164a8d9a2f396563e11, type: 3}
   - {fileID: 2712425487006802619, guid: e73007020c06a164a8d9a2f396563e11, type: 3}
   heartUI: {fileID: 2023079366}
-  scoreUI: {fileID: 0}
-  currentScore: {fileID: 0}
+  scoreUI: {fileID: 1101989602}
+  currentScore: {fileID: 1822711996}
 --- !u!4 &1675516592
 Transform:
   m_ObjectHideFlags: 0
@@ -893,6 +821,11 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 248284941}
+    - target: {fileID: 2548321426198029237, guid: 511cdb0429f055141b498ee43b90bf70,
+        type: 3}
+      propertyPath: m_Name
+      value: Score Text
+      objectReference: {fileID: 0}
     - target: {fileID: 7301451859268902283, guid: 511cdb0429f055141b498ee43b90bf70,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1023,6 +956,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1626843220}
+    - target: {fileID: 7301451860493449006, guid: 511cdb0429f055141b498ee43b90bf70,
+        type: 3}
+      propertyPath: m_Name
+      value: Lit Image
+      objectReference: {fileID: 0}
     - target: {fileID: 7301451860814484838, guid: 511cdb0429f055141b498ee43b90bf70,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1033,6 +971,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1626843220}
+    - target: {fileID: 8052509193589956296, guid: 511cdb0429f055141b498ee43b90bf70,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ef1a0bb9f6e502e46a9d74389125de69,
+        type: 3}
+    - target: {fileID: 8052509193589956296, guid: 511cdb0429f055141b498ee43b90bf70,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052509193589956296, guid: 511cdb0429f055141b498ee43b90bf70,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 36
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 511cdb0429f055141b498ee43b90bf70, type: 3}
 --- !u!1001 &8847928503430987116
