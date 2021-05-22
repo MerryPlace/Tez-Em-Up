@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 860145414928001797
     second: GOM-trophy
+  - first:
+      213: 5736707341961109080
+    second: GOM-continue
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -190,6 +193,27 @@ TextureImporter:
       bones: []
       spriteID: 50be6f792b9dfeb00800000000000000
       internalID: 860145414928001797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOM-continue
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e97f1eee0ec9f40800000000000000
+      internalID: 5736707341961109080
       vertices: []
       indices: 
       edges: []

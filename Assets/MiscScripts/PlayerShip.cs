@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerShip : MonoBehaviour
 {
-    public GameObject controllerGO;
-    Controller myController;
+    public Controller myController;
 
     SpriteRenderer mySR;
     public float speed;
@@ -85,7 +83,9 @@ public class PlayerShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myController = controllerGO.GetComponent<Controller>();
+        if(myController == null) {
+            myController  = GameObject.Find("Level Controller").GetComponent<Controller>();
+        }
         mySR = GetComponent<SpriteRenderer>();
         triggerA = transform.Find("triggerA").gameObject;
         triggerB = transform.Find("triggerB").gameObject;
@@ -115,32 +115,17 @@ public class PlayerShip : MonoBehaviour
         {
             if (!invulnerable)
             {
-                myController.Damage();
-                if (myController.getHealth() == 0)
+                myController.DamagePlayer();
+                if (myController.getPlayerHealth() == 0)
                 {
-                    PlayerDeath();
+                    myController.PlayerDeath();
                 }
                 StartCoroutine("TriggerInvul");
             }
         }
     }
 
-    void PlayerDeath() {
-        Destroy(gameObject);
-        StartCoroutine(ReturnToMenu(5f));
-    }
 
-    IEnumerator ReturnToMenu(float waitTime)
-    {
-        //yield return new WaitForSeconds(waitTime);
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
-        
-        while (asyncLoad.isDone == false)
-        {
-            yield return null;
-        }
-    }
 
     IEnumerator TriggerInvul()
     {

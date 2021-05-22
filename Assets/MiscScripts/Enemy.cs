@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb;
 
     ScoreController score;
-    public int scoreWorth;
 
     public float xSpeed;
     public float ySpeed;
@@ -54,14 +53,14 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) { //if out of bounds disappear
         if (col.gameObject.tag == "Bounds")
         {
-            score.addToCurrentScore(-(scoreWorth/5));
+            score.enemyMissed();
             Destroy(gameObject);
         }
     }
 
     void Die() //Death function
     {
-        score.addToCurrentScore(scoreWorth);
+        score.enemyDefeated();
         Destroy(gameObject);
     }
 }
