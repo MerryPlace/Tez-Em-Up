@@ -94,38 +94,21 @@ public class PlayerShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButton(0) && (!bovineMode||!firing) )
+        {
+            
+            Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (targetPos.y > -3)
+            {
+                targetPos.y = transform.position.y;
+                targetPos.z = 0;
+                transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+            }
+        }
         if(firing) 
         {
             triedToFire = true;
         }
-
-        //movement controls
-        Vector3 targetPos;
-        if(Input.touchCount > 0) //if touching screen
-        {
-            for (int i = 0; i < Input.touchCount ; i++) 
-            {
-                targetPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
-                if(targetPos.y > -3 && (!bovineMode||!firing)) 
-                {
-                    targetPos.y = transform.position.y;
-                    targetPos.z = 0;
-                    transform.position = Vector3.MoveTowards(
-                        transform.position, targetPos, speed * Time.deltaTime);
-                }            
-            }      
-        }
-        else if(Input.GetMouseButton(0)) //using mouse click
-        {
-            targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (targetPos.y > -3 && (!bovineMode||!firing))
-            {
-                targetPos.y = transform.position.y;
-                targetPos.z = 0;
-                transform.position = Vector3.MoveTowards(
-                    transform.position, targetPos, speed * Time.deltaTime);
-            }
-        }         
     }
 
     void OnCollisionEnter2D(Collision2D col)
