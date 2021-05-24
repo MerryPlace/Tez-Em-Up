@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axePrefab: {fileID: 6248465469669313297, guid: 999ff92bf9229454ca6487106d757760,
     type: 3}
+  timeUntilSwing: 2.2
+  timeUntilDestroy: 5.3

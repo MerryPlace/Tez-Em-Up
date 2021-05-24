@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6303991425213125089}
   - component: {fileID: 6303991425213125090}
   m_Layer: 0
-  m_Name: Kobold Gun
+  m_Name: Kobold Weaponry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,5 +47,5 @@ MonoBehaviour:
     type: 3}
   orbitalPrefab: {fileID: 7251557321036693220, guid: ecf5047d6e9ea9c47ad84e5712027226,
     type: 3}
-  delay: 200
+  shotDelay: 1
   orbitSpeed: 60

@@ -6,17 +6,17 @@ public class DragonWeapon : MonoBehaviour
 {
     public GameObject axePrefab;
     PlayerShip myShip;
-    int framesSinceLastSwing = 0;
     int chargeSpeed = 90;
 
     bool attacking = false;
     bool chargeSwingMode = true;
 
-    int framesUntilSwing = 600;
-    int framesUntilDeath = 2000; 
+    public float timeUntilSwing = 1.8f;
+    public float timeUntilDestroy = 4f; 
+
+    float nextTimeToAct;
 
     GameObject axe;
-
 
     // Start is called before the first frame update
     void Start()
@@ -27,31 +27,40 @@ public class DragonWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(attacking) {
-            framesSinceLastSwing++;
-            if(chargeSwingMode) {
+        if(attacking) 
+        {
+            if(chargeSwingMode) //slow charge up
+            {
                 axe.transform.RotateAround(myShip.triggerCenter.transform.position, Vector3.back, chargeSpeed * Time.deltaTime);
-                if(framesSinceLastSwing > framesUntilSwing) {
+
+                if(Time.time > nextTimeToAct) //proceed to next phase
+                {
                     chargeSwingMode = false;
+                    nextTimeToAct += timeUntilDestroy;
                     axe.transform.localScale = new Vector3(2f,2f,1);
                     axe.GetComponent<SpriteRenderer>().color = Color.red;
                     axe.GetComponent<PolygonCollider2D>().enabled = true;
                     
                 }
-            } else {
+            } 
+            else //long circular attack
+            {
                 axe.transform.RotateAround(myShip.triggerCenter.transform.position, Vector3.forward, chargeSpeed * 3.5f * Time.deltaTime);
                 
-                if(framesSinceLastSwing > framesUntilDeath) {
+                if(Time.time > nextTimeToAct) //Destroy axe
+                {
                     Destroy(axe,0);
                     attacking = false;
                 }
 
             }
-        } else if(myShip.firing) {
+        } 
+        else if(myShip.firing) //begin attack sequence
+        {
 
             attacking = true;
             chargeSwingMode = true;
-            framesSinceLastSwing = 0;
+            nextTimeToAct = Time.time + timeUntilSwing;
 
             axe = Instantiate(axePrefab, transform.position, axePrefab.transform.rotation, gameObject.transform);
         }

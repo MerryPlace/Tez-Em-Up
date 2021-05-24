@@ -133,6 +133,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7822c96cdce914ead163dfcd7a5374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &287862016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3939638227492833454, guid: 511cdb0429f055141b498ee43b90bf70,
+    type: 3}
+  m_PrefabInstance: {fileID: 7301451860621396829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &324199489
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +368,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &832627937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3428539976187401434, guid: 511cdb0429f055141b498ee43b90bf70,
+    type: 3}
+  m_PrefabInstance: {fileID: 7301451860621396829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &839609535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7301451860814484838, guid: 511cdb0429f055141b498ee43b90bf70,
@@ -366,6 +390,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &842112283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5641475965275237013, guid: 511cdb0429f055141b498ee43b90bf70,
+    type: 3}
+  m_PrefabInstance: {fileID: 7301451860621396829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &872847375 stripped
@@ -591,6 +627,11 @@ MonoBehaviour:
   - {fileID: 386460517}
   - {fileID: 1034959993}
   - {fileID: 1221807596}
+  gameOverStatTrophies:
+  - {fileID: 2120954726}
+  - {fileID: 832627937}
+  - {fileID: 287862016}
+  - {fileID: 842112283}
 --- !u!4 &1675516592
 Transform:
   m_ObjectHideFlags: 0
@@ -682,6 +723,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7301451860621396829}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120954726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3763922183140129548, guid: 511cdb0429f055141b498ee43b90bf70,
+    type: 3}
+  m_PrefabInstance: {fileID: 7301451860621396829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2136042575
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +1035,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score Text
       objectReference: {fileID: 0}
+    - target: {fileID: 5639885309472929781, guid: 511cdb0429f055141b498ee43b90bf70,
+        type: 3}
+      propertyPath: m_Name
+      value: Kills Trophy
+      objectReference: {fileID: 0}
     - target: {fileID: 6809101383697429244, guid: 511cdb0429f055141b498ee43b90bf70,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1177,6 +1235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540024662720271818, guid: 511cdb0429f055141b498ee43b90bf70,
+        type: 3}
+      propertyPath: m_Name
+      value: Loss Trophy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 511cdb0429f055141b498ee43b90bf70, type: 3}

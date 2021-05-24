@@ -10,14 +10,12 @@ public class CannonWeapon : MonoBehaviour
     PlayerShip myShip;
     SpriteRenderer mySR;
     
-    int framesSinceLastShot = 0;
-    public int shotDelay;
-    public int chargeInterval;
-    public float maxRotateSpeed;
-    public float minRotateSpeed;
+    public float chargeInterval;
+    public int rotateSpeed;
     int projectileLevel = 0;
-    int framesCharging = 0;
     bool charging;
+
+    float timeToNextCharge;
 
 
     // Start is called before the first frame update
@@ -31,44 +29,40 @@ public class CannonWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(charging) {
-            framesCharging++;
 
-            float rotateSpeed = Time.deltaTime*framesCharging;
-            if(rotateSpeed > maxRotateSpeed) {
-                rotateSpeed = maxRotateSpeed;
-        }
-            transform.Rotate(0, 0, rotateSpeed);
+        if(charging) //continue charging
+        {
+            //set rotation amount
+            transform.Rotate(0, 0, rotateSpeed * (projectileLevel+1) * Time.deltaTime);
 
-            if(framesCharging % chargeInterval == 0) {
-                if(framesCharging == chargeInterval) {
-                    projectileLevel = 1;
-                    mySR.sprite = sprites[projectileLevel];
-                    mySR.color = spriteColors[projectileLevel];
-                } else if(framesCharging == chargeInterval*2) {
-                    projectileLevel = 2;
-                    mySR.sprite = sprites[projectileLevel];
-                    mySR.color = spriteColors[projectileLevel];
-                }
-            }
+            //projectile level upgrades
+            if(projectileLevel != 2 && Time.time > timeToNextCharge)
+            {
+                timeToNextCharge+= chargeInterval;
 
-            if(!myShip.firing) {
-                charging = false;
-                mySR.enabled = false;
-                Instantiate(projectiles[projectileLevel], myShip.triggerB.transform.position, Quaternion.identity).GetComponent<CannonBall>().rotateSpeed = rotateSpeed;
-                framesSinceLastShot = 0;
-            }
-        }
-        else {
-            framesSinceLastShot++;
-            if(myShip.firing && framesSinceLastShot > shotDelay) {
-                charging = true;
-                framesCharging = 0;
-                projectileLevel = 0;
+                projectileLevel++;
                 mySR.sprite = sprites[projectileLevel];
                 mySR.color = spriteColors[projectileLevel];
-                mySR.enabled = true;
-            }   
+            }
+
+            //if player has released button to fire, fire
+            if(!myShip.firing) 
+            {
+                charging = false;
+                mySR.enabled = false;
+                Instantiate(projectiles[projectileLevel], myShip.triggerB.transform.position, Quaternion.identity)
+                    .GetComponent<CannonBall>().rotateSpeed = rotateSpeed * (projectileLevel+1) * Time.deltaTime;
+            }
+        }
+        else if (myShip.firing) //begin charging weapon and set first projectile level
+        {
+            charging = true;
+            timeToNextCharge = Time.time + chargeInterval;
+
+            projectileLevel = 0;
+            mySR.sprite = sprites[projectileLevel];
+            mySR.color = spriteColors[projectileLevel];
+            mySR.enabled = true;
         }
     }
 }

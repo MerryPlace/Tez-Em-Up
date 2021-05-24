@@ -7,8 +7,7 @@ public class KoboldWeapon : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject orbitalPrefab;
     PlayerShip myShip;
-    int framesSinceLastShot = 0;
-    public int delay = 10;
+    public float shotDelay = 10f;
     public int orbitSpeed = 30;
 
     GameObject orbitalA;
@@ -19,27 +18,32 @@ public class KoboldWeapon : MonoBehaviour
     void Start()
     {
         myShip = transform.parent.GetComponent<PlayerShip>();
+
+        //orbital setup
         Vector3 orbitalLocation = myShip.triggerCenter.transform.position;
         orbitalLocation.y += 1f;
         orbitalA = Instantiate(orbitalPrefab, orbitalLocation, Quaternion.identity, gameObject.transform);
         orbitalLocation.y -= 2f;
         orbitalB = Instantiate(orbitalPrefab, orbitalLocation, Quaternion.identity, gameObject.transform);
         orbitalB.GetComponent<SpriteRenderer>().flipY = true;
+
+        //shot setup
+        InvokeRepeating("AttemptShot",0f,shotDelay);
     }
 
     // Update is called once per frame
     void Update()
     {
-        framesSinceLastShot++;
-        if (myShip.firing && framesSinceLastShot > delay)
-        {
-            
-            Instantiate(bulletPrefab, myShip.triggerA.transform.position, Quaternion.identity);
-            framesSinceLastShot = 0;
-        }
-
         //orbitals
         orbitalA.transform.RotateAround(myShip.triggerCenter.transform.position, Vector3.forward, orbitSpeed * Time.deltaTime);
         orbitalB.transform.RotateAround(myShip.triggerCenter.transform.position, Vector3.forward, orbitSpeed * Time.deltaTime);
+    }
+
+    void AttemptShot() {
+        if (myShip.triedToFire)
+        {
+            Instantiate(bulletPrefab, myShip.triggerA.transform.position, Quaternion.identity);
+            myShip.triedToFire = false;
+        }
     }
 }

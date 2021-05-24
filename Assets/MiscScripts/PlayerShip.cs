@@ -27,18 +27,16 @@ public class PlayerShip : MonoBehaviour
     public GameObject CWeapon;
     public GameObject BArrow;
     public GameObject OCannon;
-    [HideInInspector] public float fireStartFrame = 0;
     [HideInInspector] public bool firing = false;
+    [HideInInspector] public bool triedToFire; //so one tap will result in one shot after delay
 
     public void ActionPressed()
     {
-        fireStartFrame = Time.frameCount;
         firing= true;
     }
     public void ActionReleased()
     {
         firing= false;
-        fireStartFrame = 0;
     }
 
     public void switchWeapon(int tez) 
@@ -106,6 +104,10 @@ public class PlayerShip : MonoBehaviour
                 targetPos.z = 0;
                 transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
             }
+        }
+        if(firing) 
+        {
+            triedToFire = true;
         }
     }
 

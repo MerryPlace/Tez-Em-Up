@@ -47,4 +47,5 @@ MonoBehaviour:
   - {fileID: 3019064641435032271, guid: b7fed52ceb4985047916e4bc514111e9, type: 3}
   - {fileID: 3065842397618952924, guid: f85bad5c01f70704ab36a02f81cc081e, type: 3}
   - {fileID: 5177180224898517375, guid: ef5326a1e24b45c42affcc0b4589a4d6, type: 3}
-  baseDelay: 70
+  inComboDelay: 0.3
+  betweenComboDelay: 1

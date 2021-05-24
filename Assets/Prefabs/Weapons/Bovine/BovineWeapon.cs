@@ -20,8 +20,9 @@ public class BovineWeapon : MonoBehaviour
     {
         if (myShip.firing)
         {
-            if(myArrow!=null) {
-                if (Input.GetMouseButton(0))
+            if(myArrow!=null) 
+            {
+                if (Input.GetMouseButton(0)) //move arrow on press
                 {
                     Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     if (targetPos.y > -3)
@@ -33,7 +34,8 @@ public class BovineWeapon : MonoBehaviour
                     }
                 }
             }
-            else {
+            else //if no arrow exists, spawn arrow
+            {
                 myArrow = Instantiate(arrowPrefab, myShip.triggerA.transform.position, Quaternion.identity);
                 myArrow.GetComponent<Rigidbody2D>().freezeRotation = true; //prevents rotation of arrow TODO:IMPLEMENT SMOOTH ROTATION BASED ON MOVEMENT
             }

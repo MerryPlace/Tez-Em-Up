@@ -6,24 +6,22 @@ public class CheetahWeaponry : MonoBehaviour
 {
     public GameObject bulletPrefab;
     PlayerShip myShip;
-    int framesSinceLastShot = 0;
-    public int delay = 60;
+    public float shotDelay = 10f;
+
 
     // Start is called before the first frame update
     void Start()
     {
         myShip = transform.parent.GetComponent<PlayerShip>();
+        InvokeRepeating("AttemptShot",0f,shotDelay);
     }
 
-    // Update is called once per frame
-    void Update()
+    void AttemptShot()
     {
-        framesSinceLastShot++;
-        if (myShip.firing && framesSinceLastShot > delay)
+        if (myShip.triedToFire)
         {
             Instantiate(bulletPrefab, myShip.triggerA.transform.position, Quaternion.identity);
-            framesSinceLastShot = 0;
+            myShip.triedToFire = false;
         }
-        
     }
 }

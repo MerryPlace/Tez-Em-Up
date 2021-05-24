@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df09b4f93f65184db94eb1320638b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OrbitSpeed: 10
+  damage: 6

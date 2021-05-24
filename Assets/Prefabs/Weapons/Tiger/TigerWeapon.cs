@@ -4,36 +4,42 @@ using UnityEngine;
 
 public class TigerWeapon : MonoBehaviour
 {
+        PlayerShip myShip;
     public GameObject[] projectiles;
     int shotCounter = 0;
-    
-    PlayerShip myShip;
-    int framesSinceLastShot = 0;
-    public int baseDelay = 60;
-    int delay = 0;
+
+    public float inComboDelay = .3f;
+    public float betweenComboDelay = 1f;
+
+    bool shouldDelayFire = false;
 
     // Start is called before the first frame update
     void Start()
     {
         myShip = transform.parent.GetComponent<PlayerShip>();
+        InvokeRepeating("AttemptShot",0f,inComboDelay);
     }
 
-    // Update is called once per frame
-    void Update()
+    void AttemptShot()
     {
-        framesSinceLastShot++;
-        if (myShip.firing && framesSinceLastShot > delay)
+        if (myShip.triedToFire && !shouldDelayFire)
         {
-            Instantiate(projectiles[shotCounter %3], myShip.triggerA.transform.position, Quaternion.identity);
-            framesSinceLastShot = 0;
+            Instantiate(projectiles[shotCounter], myShip.triggerA.transform.position, Quaternion.identity);
             shotCounter++;
+            myShip.triedToFire = false;
 
-            if(shotCounter %3 == 0) {
-                delay = baseDelay*3;
-            }
-            else {
-                delay = baseDelay;
+            if(shotCounter == 3) {
+                shotCounter = 0;
+                shouldDelayFire = true;
+                StartCoroutine(DelayFire(betweenComboDelay));
             }
         }
     }
+
+    IEnumerator DelayFire(float time)
+    {
+        yield return new WaitForSeconds(time);
+        shouldDelayFire = false;
+    }
+
 }
