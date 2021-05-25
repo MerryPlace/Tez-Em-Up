@@ -28,7 +28,7 @@ public class KoboldWeapon : MonoBehaviour
         orbitalB.GetComponent<SpriteRenderer>().flipY = true;
 
         //shot setup
-        InvokeRepeating("AttemptShot",0f,shotDelay);
+        InvokeRepeating("AttemptShot",shotDelay,shotDelay);
     }
 
     // Update is called once per frame

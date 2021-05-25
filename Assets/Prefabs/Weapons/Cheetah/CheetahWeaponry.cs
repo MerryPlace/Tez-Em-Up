@@ -13,7 +13,7 @@ public class CheetahWeaponry : MonoBehaviour
     void Start()
     {
         myShip = transform.parent.GetComponent<PlayerShip>();
-        InvokeRepeating("AttemptShot",0f,shotDelay);
+        InvokeRepeating("AttemptShot",shotDelay,shotDelay);
     }
 
     void AttemptShot()

@@ -11,13 +11,14 @@ public class TigerWeapon : MonoBehaviour
     public float inComboDelay = .3f;
     public float betweenComboDelay = 1f;
 
-    bool shouldDelayFire = false;
+    bool shouldDelayFire = true;
 
     // Start is called before the first frame update
     void Start()
     {
         myShip = transform.parent.GetComponent<PlayerShip>();
         InvokeRepeating("AttemptShot",0f,inComboDelay);
+        StartCoroutine(DelayFire(inComboDelay/2));
     }
 
     void AttemptShot()

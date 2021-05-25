@@ -13,6 +13,7 @@ public class BovineWeapon : MonoBehaviour
     void Start()
     {
         myShip = transform.parent.GetComponent<PlayerShip>();
+        myArrow = GameObject.Find(arrowPrefab.name);
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class BovineWeapon : MonoBehaviour
             else //if no arrow exists, spawn arrow
             {
                 myArrow = Instantiate(arrowPrefab, myShip.triggerA.transform.position, Quaternion.identity);
+                myArrow.name = arrowPrefab.name;
                 myArrow.GetComponent<Rigidbody2D>().freezeRotation = true; //prevents rotation of arrow TODO:IMPLEMENT SMOOTH ROTATION BASED ON MOVEMENT
             }
 
