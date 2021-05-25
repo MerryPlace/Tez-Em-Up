@@ -88,18 +88,15 @@ public class PlayerShip : MonoBehaviour
         triggerA = transform.Find("triggerA").gameObject;
         triggerB = transform.Find("triggerB").gameObject;
         triggerCenter = transform.Find("triggerCenter").gameObject;
-        switchWeapon(1);
+        myController.SwitchBoardPressed(0); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(firing) 
-        {
-            triedToFire = true;
-        }
 
-        //movement controls
+        // movement controls//
+
         Vector3 targetPos;
         if(Input.touchCount > 0) //if touching screen
         {
@@ -125,7 +122,55 @@ public class PlayerShip : MonoBehaviour
                 transform.position = Vector3.MoveTowards(
                     transform.position, targetPos, speed * Time.deltaTime);
             }
-        }         
+        }
+
+        checkForKeyPress();
+        
+        if(firing) 
+        {
+            triedToFire = true;
+        }
+    }
+
+    void checkForKeyPress() 
+    {
+        // button controls//
+
+        //fire keyboard controls
+        if (Input.GetKey("space")) //pressing fire
+        {
+            ActionPressed();
+        }
+        if (Input.GetKeyUp("space")) //released fire
+        {
+            ActionReleased();
+        }    
+
+        //char change keyboard controls
+        if (Input.GetKeyDown("t") || Input.GetKeyDown("1")) 
+        {
+            myController.SwitchBoardPressed(0); 
+        }
+        else if (Input.GetKeyDown("k") || Input.GetKeyDown("2")) 
+        {
+            myController.SwitchBoardPressed(1); 
+        }
+        else if (Input.GetKeyDown("d") || Input.GetKeyDown("3")) 
+        {
+            myController.SwitchBoardPressed(2); 
+        }
+        else if (Input.GetKeyDown("c") || Input.GetKeyDown("4")) 
+        {
+            myController.SwitchBoardPressed(3); 
+        }
+        else if (Input.GetKeyDown("b") || Input.GetKeyDown("5")) 
+        {
+            myController.SwitchBoardPressed(4); 
+        }
+        else if (Input.GetKeyDown("o") || Input.GetKeyDown("6")) 
+        {
+            myController.SwitchBoardPressed(5); 
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
