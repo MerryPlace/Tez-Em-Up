@@ -88,7 +88,6 @@ public class PlayerShip : MonoBehaviour
         triggerA = transform.Find("triggerA").gameObject;
         triggerB = transform.Find("triggerB").gameObject;
         triggerCenter = transform.Find("triggerCenter").gameObject;
-        myController.SwitchBoardPressed(0); 
     }
 
     // Update is called once per frame

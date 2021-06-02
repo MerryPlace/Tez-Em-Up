@@ -10,10 +10,10 @@ public class UIManager : MonoBehaviour
     //Control console
     public Sprite[] portraits;
     public GameObject portraitUI;
-    public Sprite[] highlights;
-    public GameObject switchUI;
     public Sprite[] hearts;
     public GameObject heartUI;
+    public Sprite[] charIconsUnlit;
+    public Sprite[] charIconsLit;
     public Button[] consoleButtons;
     public Text consoleScoreUI;
 
@@ -40,7 +40,18 @@ public class UIManager : MonoBehaviour
     public void UpdateSwitchBoard(int buttonNum)
     {
         portraitUI.GetComponent<Image>().sprite = portraits[buttonNum];
-        switchUI.GetComponent<Image>().sprite = highlights[buttonNum];
+
+        for(int i = 0; i < consoleButtons.Length - 1; i++) { //final button is action (ignore)
+            if(buttonNum == i)
+            {
+                Debug.Log("Trying to light "+ i);
+                consoleButtons[i].GetComponent<Image>().sprite = charIconsLit[i];
+            }
+            else
+            {
+                consoleButtons[i].GetComponent<Image>().sprite = charIconsUnlit[i];
+            }
+        }
     }
 
     public void UpdateHealth(int health)

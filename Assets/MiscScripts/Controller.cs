@@ -15,10 +15,11 @@ public class Controller : MonoBehaviour
         if(myShip == null) {
             myShip  = GameObject.Find("Tezinol Ship").GetComponent<PlayerShip>();
         }
-        SwitchBoardPressed(3);
+        SwitchBoardPressed(0);
     }
 
     public void SwitchBoardPressed(int buttonNum) {
+        Debug.Log("pressed " + buttonNum);
         myUI.UpdateSwitchBoard(buttonNum);
         myShip.switchWeapon(buttonNum);
     }
