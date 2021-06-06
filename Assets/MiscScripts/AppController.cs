@@ -5,6 +5,8 @@ using UnityEngine;
 public class AppController : MonoBehaviour
 {   
     public static AppController controller;
+
+    public string appVersion = "Alpha 0.1";
     public short difficultyMode = 0;
     void Awake()
     {

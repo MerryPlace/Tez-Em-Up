@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     public Text modeText;
     public Image menuImage;
 
+    public Text creditVerText;
+
     AppController appController;
 
     public Sprite[] portraitSprites;
@@ -19,6 +21,7 @@ public class MainMenu : MonoBehaviour
     {
         appController = GameObject.Find("AppController").GetComponent<AppController>();
         difficultyMode = appController.difficultyMode;
+        creditVerText.text = "Ver " + Application.version + "\nNoah Ortega";
         
         menuImage.sprite = portraitSprites[(int)Random.Range(0, portraitSprites.Length)];
         modeText.text = ModeCodeText();
@@ -46,7 +49,7 @@ public class MainMenu : MonoBehaviour
         if(difficultyMode == 3) {
             difficultyMode = 0;
         }
-        //TODO: implement difficulty
+        
         modeText.GetComponent<Text>().text = ModeCodeText();
 
     }
